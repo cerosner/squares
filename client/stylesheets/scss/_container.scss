@@ -1,0 +1,14 @@
+container {
+  // @include test-border(blue);
+  @include flex-display(row, center, start);
+}
+#today-container {
+  // @include test-border(white);
+  @include flex-display(column, start, center);
+  width: 80%;
+}
+#box {
+  // @include test-border(red);
+  @include flex-display(column, start, center);
+  margin: 1rem;
+}

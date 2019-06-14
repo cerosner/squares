@@ -1,0 +1,14 @@
+header {
+  // @include test-border(red);
+  margin-bottom: 3rem;
+}
+#nav-header {
+  /* @include test-border(green); */
+  @include flex-display(column-reverse, space-between, center);
+  height: 6rem;
+}
+#home-nav-header {
+  @include font-styles($font-color, 3rem);
+  padding-top: .5rem;
+  border-top: 2px solid $font-color;
+}

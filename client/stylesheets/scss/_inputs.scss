@@ -1,0 +1,22 @@
+#overnight-box {
+  text-align: center;
+  margin-bottom: .25rem;
+}
+#sleep-box {
+  // @include test-border(green);
+  @include flex-display(row-reverse, space-between, start);
+  margin-top: .25rem;
+  padding: 0 .5rem;
+  label {
+    font-size: .5rem;
+  }
+}
+#sleep-input {
+  @include flex-display(row, space-between, start);
+  width: 50%;
+}
+.sleep-icon {
+  font-size: .75rem;
+  align-self: center;
+  margin-left: .25rem;
+}

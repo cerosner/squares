@@ -1,0 +1,30 @@
+#input-box {
+  @include dimensions(20rem, 20rem);
+  @include flex-display(row, center, start);
+  flex-wrap: wrap;
+}
+.input {
+  @include dimensions(30%, 30%);
+  @include flex-display(row, center, center);
+  flex-wrap: wrap;
+  color: $primary;
+  background: $secondary;
+  margin: .25rem;
+  border: 1px solid black;
+  h6 {
+    @extend %input-label;
+  }
+  &:hover {
+    background-color: $tertiary;
+    border: 1px solid $font-color;
+    h6 {
+      visibility: visible;
+    }
+  }
+}
+.input-icon {
+  @include dimensions(75%, 100%);
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 1.5rem;
+}
