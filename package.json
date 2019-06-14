@@ -1,0 +1,23 @@
+{
+  "name": "squares",
+  "version": "1.0.0",
+  "description": "Personal tracker app",
+  "main": "index.js",
+  "scripts": {
+    "test": "t",
+    "build-css": "sass --watch client/stylesheets/scss:client/stylesheets"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerosner/squares.git"
+  },
+  "author": "Cassie Rosner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cerosner/squares/issues"
+  },
+  "homepage": "https://github.com/cerosner/squares#readme",
+  "dependencies": {
+    "sass": "^1.21.0"
+  }
+}
