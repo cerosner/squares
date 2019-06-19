@@ -1,5 +1,4 @@
-.gitignore
-outline.md
-notes.md
+public/bundle.js
+public/styles/index.css.map
 node_modules
 package-lock.json
