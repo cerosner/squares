@@ -4,9 +4,9 @@
   "description": "Personal tracker app",
   "main": "index.js",
   "scripts": {
-    "start": "npm run start-server & npm run build-css",
-    "start-server": "nodemon server",
-    "build-css": "sass --watch public/styles/scss:public/styles"
+    "start": "npm run build-css & webpack-dev-server",
+    "build-css": "sass --watch public/styles/scss:public/styles",
+    "server": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,13 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "sass": "^1.21.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.2"
   }
 }
