@@ -7,13 +7,13 @@ body {
   font-family: $font-family;
   background: $primary;
 }
-a {
+li {
  @include font-styles($secondary, .75rem);
  text-decoration: none;
  text-transform: lowercase;
- &:hover {
-   color: $font-color;
- }
+   p:hover {
+     color: $font-color;
+   }
 }
 #body-div {
   margin: 3rem 3rem;
