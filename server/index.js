@@ -1,6 +1,9 @@
 const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
+const graphqlHttp = require('express-graphql')
+const { buildSchema, resolvers } = require('./graphql')
+
 const PORT = 8080
 const app = express()
 
@@ -9,6 +12,13 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 // Static middleware
 app.use(express.static(path.join(__dirname, '..', 'public')))
+
+// API
+app.use('/graphql', graphqlHttp({
+  schema: buildSchema,
+  rootValue: resolvers,
+  graphiql: true
+}))
 
 // For all GET requests that aren't to an API route, we will send the index.html!
 app.get('/*', (req, res) => {
