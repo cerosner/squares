@@ -2,7 +2,9 @@ const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
 const graphqlHttp = require('express-graphql')
-const { buildSchema, resolvers } = require('./graphql')
+const { buildSchema } = require('graphql')
+const { schema, resolvers } = require('./graphql')
+const mongoose = require('mongoose')
 
 const PORT = 8080
 const app = express()
@@ -15,7 +17,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')))
 
 // API
 app.use('/graphql', graphqlHttp({
-  schema: buildSchema,
+  schema: buildSchema(schema),
   rootValue: resolvers,
   graphiql: true
 }))
@@ -38,7 +40,12 @@ app.use((err, req, res) => {
   res.send(err.message || 'Internal server error')
 })
 
-app.listen(PORT, () => {
+const { MONGO_PASSWORD } = process.env
+
+mongoose.connect(`mongodb+srv://admin:${MONGO_PASSWORD}@squares-uaknb.mongodb.net/test?retryWrites=true&w=majority`, {
+  useNewUrlParser: true
+}).then(app.listen(PORT, () => {
   console.log(`>> i'm listening l(*‿*✿)/`)
   console.log(`>> http://localhost:${PORT}`)
-})
+  })
+).catch(err => console.log(err))
